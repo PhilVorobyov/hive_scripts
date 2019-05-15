@@ -35,5 +35,5 @@ WHERE datediff(srch_co, srch_ci) IN (
   	SELECT MAX (datediff(srch_co, srch_ci) )
 	FROM hive
 	WHERE srch_adults_cnt = 2
-	AND srch_children_cnt > 0 )
+	AND srch_children_cnt > 0 );
 EOF

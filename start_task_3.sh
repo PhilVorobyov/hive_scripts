@@ -33,5 +33,5 @@ SELECT hotel_continent, hotel_country, hotel_market, count(*) AS cnt
 FROM hive
 GROUP BY hotel_continent, hotel_country, hotel_market
 ORDER BY cnt DESC
-LIMIT 3
+LIMIT 3;
 EOF
