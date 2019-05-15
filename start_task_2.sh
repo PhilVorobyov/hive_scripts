@@ -31,9 +31,9 @@ LOCATION '/input_data/Pilip_Varabyou/train/';
 # Write hive script to calculate the longest period of stay of couples with children
 SELECT *
 FROM hive as h
-WHERE datediff(srch_co, srch_ci) IN (
-  	SELECT MAX (datediff(srch_co, srch_ci) )
-	FROM hive
-	WHERE srch_adults_cnt = 2
-	AND srch_children_cnt > 0 );
+WHERE datediff(h.srch_co, h.srch_ci) IN (
+SELECT MAX (datediff(hive.srch_co, hive.srch_ci))
+FROM hive
+WHERE hive.srch_adults_cnt = 2
+AND hive.srch_children_cnt > 0 );
 EOF
